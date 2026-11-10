@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">实用工具</string>
+    <string name="app_tagline">FLOATING TIME · LEDGER EDITION</string>
+    <string name="hero_title">把时间放在视线之上</string>
+    <string name="hero_description">十分之一秒刷新 · 末三秒进度提示 · 自动跟随系统时区</string>
+    <string name="status_permission_ready">悬浮窗权限已开启</string>
+    <string name="status_permission_missing">需要授予悬浮窗权限</string>
+    <string name="status_running">悬浮时钟正在运行</string>
+    <string name="status_stopped">悬浮时钟尚未开启</string>
+    <string name="action_grant_permission">授予悬浮窗权限</string>
+    <string name="action_start">开启悬浮时钟</string>
+    <string name="action_stop">关闭悬浮时钟</string>
+    <string name="feature_resize_title">拖拽缩放</string>
+    <string name="feature_resize_heading">01  拖拽缩放</string>
+    <string name="feature_resize_body">拖动右下角把手，退出时自动记住大小。</string>
+    <string name="feature_move_title">自由移动</string>
+    <string name="feature_move_heading">02  自由移动</string>
+    <string name="feature_move_body">按住悬浮窗空白区域，可移动到屏幕任意位置。</string>
+    <string name="feature_timezone_title">自动时区</string>
+    <string name="feature_timezone_heading">03  自动时区</string>
+    <string name="feature_timezone_body">跟随手机时区，并显示 UTC 偏移与代表地区。</string>
+    <string name="permission_tip">首次使用时，系统会打开“显示在其他应用上层”设置页。</string>
+    <string name="appearance_heading">悬浮窗外观</string>
+    <string name="opacity_label">背景透明度 %1$d%%</string>
+    <string name="opacity_description">仅调整灰色背景，时间、进度条和操作按钮保持清晰。</string>
+    <string name="notification_channel">悬浮时钟运行状态</string>
+    <string name="notification_title">悬浮时钟正在运行</string>
+    <string name="notification_body">点击返回设置，或使用操作按钮关闭悬浮窗。</string>
+</resources>

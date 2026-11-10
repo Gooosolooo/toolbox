@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ink">#273748</color>
+    <color name="paper">#EDF1F6</color>
+    <color name="paper_deep">#DDE5EE</color>
+    <color name="tool_primary">#4B647C</color>
+    <color name="tool_primary_pressed">#3D546A</color>
+    <color name="tool_status_fill">#184B647C</color>
+    <color name="tool_status_outline">#554B647C</color>
+    <color name="muted">#53677A</color>
+    <color name="tool_surface">#F9FBFD</color>
+    <color name="tool_outline">#C4CFDC</color>
+    <color name="widget_field">#F0F4FA</color>
+    <color name="widget_hint">#667284</color>
+    <color name="widget_ink">#202630</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
