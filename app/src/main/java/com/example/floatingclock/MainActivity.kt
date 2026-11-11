@@ -10,7 +10,6 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -45,6 +44,7 @@ class MainActivity : ComponentActivity() {
                 ToolboxScreen(
                     onClockClick = { startActivity(Intent(this, ClockActivity::class.java)) },
                     onSearchClick = { startActivity(Intent(this, SearchActivity::class.java)) },
+                    onShoppingClick = { startActivity(Intent(this, ShoppingActivity::class.java)) },
                 )
             }
         }
@@ -75,7 +75,7 @@ internal fun ToolboxTheme(content: @Composable () -> Unit) {
 }
 
 @Composable
-private fun ToolboxScreen(onClockClick: () -> Unit, onSearchClick: () -> Unit) {
+private fun ToolboxScreen(onClockClick: () -> Unit, onSearchClick: () -> Unit, onShoppingClick: () -> Unit) {
     Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
         Column(
             modifier = Modifier.safeDrawingPadding().verticalScroll(rememberScrollState())
@@ -96,7 +96,7 @@ private fun ToolboxScreen(onClockClick: () -> Unit, onSearchClick: () -> Unit) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 ToolTile(R.string.clock_tool, R.drawable.ic_tool_clock, onClockClick, Modifier.weight(1f))
                 ToolTile(R.string.search_tool, R.drawable.ic_tool_search, onSearchClick, Modifier.weight(1f))
-                Spacer(Modifier.weight(1f))
+                ToolTile(R.string.shopping_tool, R.drawable.ic_tool_shopping, onShoppingClick, Modifier.weight(1f))
             }
         }
     }
@@ -128,5 +128,5 @@ private fun ToolTile(label: Int, icon: Int, onClick: () -> Unit, modifier: Modif
 @Preview(showBackground = true, widthDp = 360)
 @Composable
 private fun ToolboxPreview() {
-    ToolboxTheme { ToolboxScreen(onClockClick = {}, onSearchClick = {}) }
+    ToolboxTheme { ToolboxScreen(onClockClick = {}, onSearchClick = {}, onShoppingClick = {}) }
 }

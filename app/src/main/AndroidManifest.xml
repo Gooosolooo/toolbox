@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <queries>
         <package android:name="com.taobao.taobao" />
@@ -45,6 +46,25 @@
             android:exported="false"
             android:parentActivityName=".MainActivity"
             android:windowSoftInputMode="stateAlwaysVisible|adjustResize" />
+
+        <activity
+            android:name=".ShoppingActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <receiver android:name=".ShoppingAlarmReceiver" android:exported="false" />
+
+        <receiver android:name=".ShoppingWidgetProvider" android:exported="false" android:label="@string/shopping_tool">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/shopping_widget_info" />
+        </receiver>
+
+        <service android:name=".ShoppingTimerService" android:exported="false" android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Displays a user-started shopping countdown across apps and alerts at expiry." />
+        </service>
 
         <receiver
             android:name=".SearchWidgetProvider"

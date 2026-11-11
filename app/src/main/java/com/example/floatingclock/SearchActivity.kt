@@ -113,7 +113,7 @@ class SearchActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        keyword = savedInstanceState?.getString(KEYWORD).orEmpty()
+        keyword = (savedInstanceState?.getString(KEYWORD) ?: intent.getStringExtra(EXTRA_QUERY)).orEmpty()
         pendingTarget = SearchTarget.entries.firstOrNull {
             it.name == savedInstanceState?.getString(TARGET)
         }
@@ -315,15 +315,16 @@ class SearchActivity : ComponentActivity() {
             Toast.LENGTH_LONG).show()
     }
 
-    private companion object {
-        const val KEYWORD = "keyword"
-        const val TARGET = "target"
-        const val PERMISSION_VISIBLE = "permissionVisible"
-        const val REQUESTED_SETTINGS = "requestedSettings"
-        const val LAYOUT_PREFERENCES = "search_layout"
-        const val COLLAPSED_CATEGORIES = "collapsed_categories"
-        const val CONNECTION_CHECK_COUNT = 16
-        const val CONNECTION_CHECK_INTERVAL_MS = 250L
+    companion object {
+        internal const val EXTRA_QUERY = "com.example.floatingclock.SEARCH_QUERY"
+        private const val KEYWORD = "keyword"
+        private const val TARGET = "target"
+        private const val PERMISSION_VISIBLE = "permissionVisible"
+        private const val REQUESTED_SETTINGS = "requestedSettings"
+        private const val LAYOUT_PREFERENCES = "search_layout"
+        private const val COLLAPSED_CATEGORIES = "collapsed_categories"
+        private const val CONNECTION_CHECK_COUNT = 16
+        private const val CONNECTION_CHECK_INTERVAL_MS = 250L
     }
 }
 
